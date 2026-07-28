@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://doysj8jswuwjo"]
+
+[ext_resource type="Script" uid="uid://cttikv6tcj847" path="res://scripts/configpopup.gd" id="1_en3dd"]
+
+[node name="ConfigPopup" type="PopupPanel" unique_id=1125987326]
+oversampling_override = 1.0
+title = "Soulsborne Message Overlay Configuration"
+initial_position = 2
+size = Vector2i(640, 480)
+visible = true
+borderless = false
+script = ExtResource("1_en3dd")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=523344314]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 636.0
+offset_bottom = 476.0
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1378263780]
+layout_mode = 2
+
+[node name="HotkeyLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=336148469]
+layout_mode = 2
+text = "- Hotkey Messages -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=788917256]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1477834977]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=313426913]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+
+[node name="HotkeyContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=1870442383]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddHotkeyButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=794400201]
+layout_mode = 2
+text = "+"
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=973356406]
+layout_mode = 2
+text = "- Audio -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=678981635]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/VolumeContainer" unique_id=727807074]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VolumeContainer" unique_id=1041582611]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HookLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1590000545]
+layout_mode = 2
+text = "- Hook -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HookPortContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1544751176]
+layout_mode = 2
+
+[node name="HookPortLabel" type="Label" parent="MarginContainer/VBoxContainer/HookPortContainer" unique_id=295865826]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Port"
+
+[node name="HookPortSpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer/HookPortContainer" unique_id=218007215]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+min_value = 1.0
+max_value = 65535.0
+value = 22711.0
+alignment = 2
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/AddHotkeyButton" to="." method="_on_add_hotkey_button_pressed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VolumeContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HookPortContainer/HookPortSpinBox" to="." method="_on_hook_port_spin_box_value_changed"]

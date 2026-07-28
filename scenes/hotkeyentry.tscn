@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dsnbwqwajlqfd"]
+
+[ext_resource type="Script" uid="uid://ncpc1a17waqs" path="res://scripts/hotkeyentry.gd" id="1_5o5y1"]
+
+[node name="HotkeyEntry" type="HBoxContainer" unique_id=250207182]
+script = ExtResource("1_5o5y1")
+
+[node name="KeySelection" type="Button" parent="." unique_id=1129889331]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Numpad *"
+
+[node name="GameSelection" type="OptionButton" parent="." unique_id=364509286]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 6
+item_count = 9
+popup/item_0/text = "DeS"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "DS1"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+popup/item_2/text = "DS2"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/text = "DS3"
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_4/text = "BB"
+popup/item_4/id = 4
+popup/item_4/disabled = true
+popup/item_5/text = "SK"
+popup/item_5/id = 5
+popup/item_5/disabled = true
+popup/item_6/text = "ER"
+popup/item_6/id = 6
+popup/item_7/text = "ERNR"
+popup/item_7/id = 7
+popup/item_7/disabled = true
+popup/item_8/text = "DB"
+popup/item_8/id = 8
+popup/item_8/disabled = true
+
+[node name="TypeSelection" type="SpinBox" parent="." unique_id=1569395192]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 9.0
+alignment = 2
+prefix = "Type"
+
+[node name="MessageSelection" type="LineEdit" parent="." unique_id=1672612261]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+placeholder_text = "Message.."
+
+[connection signal="toggled" from="KeySelection" to="." method="_on_key_selection_toggled"]
+[connection signal="item_selected" from="GameSelection" to="." method="_on_game_selection_item_selected"]
+[connection signal="pressed" from="GameSelection" to="." method="_on_game_selection_pressed"]
+[connection signal="value_changed" from="TypeSelection" to="." method="_on_type_selection_value_changed"]
+[connection signal="text_changed" from="MessageSelection" to="." method="_on_message_selection_text_changed"]
+[connection signal="text_submitted" from="MessageSelection" to="." method="_on_message_selection_text_submitted"]
