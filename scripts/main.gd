@@ -153,6 +153,10 @@ func _ready() -> void:
 	config_popup.setting_changed.connect(update_setting)
 	add_child(config_popup)
 	config_popup.popup()
+	# Ugly hack to load hotkeys from config menu on startup. Centralize this stuff in a persistent autoload script?
+	if !config.get_value("config", "showonstart", true):
+		config_popup._on_close_requested()
+		config_popup.queue_free()
 
 func _process(delta: float) -> void:
 	if hook_enabled:
@@ -170,6 +174,8 @@ func trigger_message(game: int, type: int, message: String):
 	var message_anim: StringName = "message_%s_%s" % [MessageGame.find_key(game), type]
 	if !%MessageAnimation.has_animation(message_anim):
 		print("Message animation '%s' was not found, this message game/type may be unsupported!" % message_anim)
+		%ErrorLabel.text = "Message animation '%s' was not found, this message game/type may be unsupported!" % message_anim
+		%MessageAnimation.play("error")
 		return
 	message_text_updated.emit(message)
 	%MessageAnimation.play(message_anim)

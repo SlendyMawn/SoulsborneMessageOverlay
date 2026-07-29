@@ -1,2 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
+/bin/compile
+/src/hotkeydaemon/.sconsign.dblite

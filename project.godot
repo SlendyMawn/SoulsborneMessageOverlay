@@ -41,6 +41,10 @@ window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 window/per_pixel_transparency/allowed=true
 
+[gui]
+
+theme/custom="uid://cromjub0a4gd5"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

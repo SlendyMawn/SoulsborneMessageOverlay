@@ -1,0 +1,123 @@
+[gd_resource type="Theme" format=3 uid="uid://cromjub0a4gd5"]
+
+[ext_resource type="Texture2D" uid="uid://bfe14xpwceplv" path="res://textures/gfx_menu.png" id="1_e1x85"]
+[ext_resource type="Texture2D" uid="uid://dee25yfrgk76r" path="res://textures/gfx_checkbox_checked.png" id="1_ttqs8"]
+[ext_resource type="Texture2D" uid="uid://b2td207wpkfrd" path="res://textures/gfx_checkbox_checked_disabled.png" id="2_wdt2l"]
+[ext_resource type="Texture2D" uid="uid://du42p2lmyk654" path="res://textures/gfx_checkbox.png" id="3_6cw85"]
+[ext_resource type="Texture2D" uid="uid://cn35teht44eag" path="res://textures/gfx_checkbox_disabled.png" id="4_504p6"]
+[ext_resource type="Texture2D" uid="uid://bqlfh5anbrs1k" path="res://textures/gfx_slider_head.png" id="5_howt0"]
+[ext_resource type="Texture2D" uid="uid://b0tim4g4k1bbp" path="res://textures/gfx_slider_head_disabled.png" id="6_n3ikw"]
+[ext_resource type="Texture2D" uid="uid://c001pvtdyj36l" path="res://textures/gfx_slider_head_highlight.png" id="7_mworl"]
+[ext_resource type="Texture2D" uid="uid://b0kgtc6iwjk2n" path="res://textures/gfx_slider_bg.png" id="8_ndmpe"]
+[ext_resource type="Texture2D" uid="uid://ckgwry438u0nd" path="res://textures/gfx_optionbox.png" id="9_wdt2l"]
+[ext_resource type="FontFile" uid="uid://bj6rnvuj1qm56" path="res://fonts/adobe-garmond-pro.OTF" id="11_6cw85"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wdt2l"]
+load_path = "res://.godot/imported/gfx_optionbox.png-c05eb4fa3a1cffdf8b7b9e4f82280bb9.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6cw85"]
+texture = SubResource("CompressedTexture2D_wdt2l")
+modulate_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_504p6"]
+load_path = "res://.godot/imported/gfx_optionbox.png-c05eb4fa3a1cffdf8b7b9e4f82280bb9.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_howt0"]
+texture = SubResource("CompressedTexture2D_504p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mworl"]
+texture = SubResource("CompressedTexture2D_504p6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ceoj"]
+texture = ExtResource("9_wdt2l")
+modulate_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ndmpe"]
+load_path = "res://.godot/imported/gfx_optionbox.png-c05eb4fa3a1cffdf8b7b9e4f82280bb9.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6q1gq"]
+texture = SubResource("CompressedTexture2D_ndmpe")
+modulate_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+
+[sub_resource type="DPITexture" id="DPITexture_0ceoj"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"4\" height=\"8\"><path fill=\"#fff\" fill-opacity=\".25\" d=\"M1 0h2v16H1z\"/></svg>
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q1gq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3n26i"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1rmny"]
+texture = ExtResource("8_ndmpe")
+expand_margin_top = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6cw85"]
+load_path = "res://.godot/imported/gfx_optionbox.png-c05eb4fa3a1cffdf8b7b9e4f82280bb9.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_504p6"]
+texture = SubResource("CompressedTexture2D_6cw85")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vhp3g"]
+texture = ExtResource("9_wdt2l")
+modulate_color = Color(0.76114523, 0.76114523, 0.76114523, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_howt0"]
+load_path = "res://.godot/imported/gfx_optionbox.png-c05eb4fa3a1cffdf8b7b9e4f82280bb9.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n3ikw"]
+texture = SubResource("CompressedTexture2D_howt0")
+modulate_color = Color(0.2509804, 0.2509804, 0.2509804, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cl6jf"]
+texture = ExtResource("1_e1x85")
+expand_margin_left = 128.0
+expand_margin_top = 128.0
+expand_margin_right = 128.0
+expand_margin_bottom = 128.0
+
+[resource]
+default_font = ExtResource("11_6cw85")
+Button/styles/disabled = SubResource("StyleBoxTexture_6cw85")
+Button/styles/focus = SubResource("StyleBoxTexture_howt0")
+Button/styles/hover = SubResource("StyleBoxTexture_mworl")
+Button/styles/normal = SubResource("StyleBoxTexture_0ceoj")
+Button/styles/pressed = SubResource("StyleBoxTexture_6q1gq")
+CheckBox/icons/checked = ExtResource("1_ttqs8")
+CheckBox/icons/checked_disabled = ExtResource("2_wdt2l")
+CheckBox/icons/unchecked = ExtResource("3_6cw85")
+CheckBox/icons/unchecked_disabled = ExtResource("4_504p6")
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/constants/tick_offset = 0
+HSlider/icons/grabber = ExtResource("5_howt0")
+HSlider/icons/grabber_disabled = ExtResource("6_n3ikw")
+HSlider/icons/grabber_highlight = ExtResource("7_mworl")
+HSlider/icons/tick = SubResource("DPITexture_0ceoj")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_6q1gq")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_3n26i")
+HSlider/styles/slider = SubResource("StyleBoxTexture_1rmny")
+LineEdit/styles/focus = SubResource("StyleBoxTexture_504p6")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_vhp3g")
+LineEdit/styles/read_only = SubResource("StyleBoxTexture_n3ikw")
+PopupPanel/styles/panel = SubResource("StyleBoxTexture_cl6jf")
