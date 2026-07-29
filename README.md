@@ -9,7 +9,7 @@ This can be triggered via hotkey or via UDP packet from any local program. *(Str
 
  - [x] Custom Message Text
  - [x] Multiple Message Types
- - [ ] Play Messages On Hotkeys
+ - [x] Play Messages On Hotkeys
  - [x] UDP Hook
 
 **Supported Message Types**
