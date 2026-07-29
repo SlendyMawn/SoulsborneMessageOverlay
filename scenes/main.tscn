@@ -325,6 +325,9 @@ item_0/id = 0
 item_1/text = "Quit"
 item_1/id = 1
 
+[node name="HotkeyDaemon" type="HotkeyDaemon" parent="." unique_id=1251134676]
+
 [connection signal="message_text_updated" from="." to="MessageER/MessageText" method="set_text"]
 [connection signal="message_text_updated" from="." to="MessageER/MessageTextGlow" method="set_text"]
 [connection signal="index_pressed" from="StatusIndicator/TrayMenu" to="." method="_on_tray_menu_index_pressed"]
+[connection signal="on_key_pressed" from="HotkeyDaemon" to="." method="_on_hotkey_daemon_on_key_pressed"]

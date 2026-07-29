@@ -1,0 +1,8 @@
+[configuration]
+entry_symbol = "hotkey_library_init"
+compatibility_minimum = "4.7"
+
+[libraries]
+windows.debug.x86_64 = "res://addons/hotkeydaemon/bin/hotkeydaemon.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://addons/hotkeydaemon/bin/hotkeydaemon.windows.template_release.x86_64.dll"
+

@@ -34,6 +34,9 @@ func _process(delta: float) -> void:
 		_process_hook()
 
 func trigger_message(game: int, type: int, message: String):
+	# Do not play during another message
+	if %MessageAnimation.is_playing():
+		return
 	var message_anim: StringName = "message_%s_%s" % [MessageGame.find_key(game), type]
 	if !%MessageAnimation.has_animation(message_anim):
 		print("Message animation '%s' was not found, this message game/type may be unsupported!" % message_anim)
@@ -79,3 +82,7 @@ func _on_tray_menu_index_pressed(index: int) -> void:
 
 func update_setting(setting: StringName, value):
 	set(setting, value)
+
+
+func _on_hotkey_daemon_on_key_pressed(value: int) -> void:
+	print(value)
