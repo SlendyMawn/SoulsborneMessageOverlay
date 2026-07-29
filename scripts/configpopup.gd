@@ -13,6 +13,7 @@ func _ready() -> void:
 func load_config():
 	%HookPortSpinBox.set_value_no_signal(config.get_value("hook", "port", 22711))
 	%VolumeSlider.set_value_no_signal(config.get_value("audio", "volume", 1.0))
+	%HookToggleCheckBox.set_pressed_no_signal(config.get_value("hook", "enabled", true))
 	# Load hotkeys
 	if config.has_section("hotkey"):
 		for hotkey in config.get_section_keys("hotkey"):
@@ -24,6 +25,7 @@ func load_config():
 			new_hotkey.key = hotkey_settings["key"]
 			new_hotkey.message = hotkey_settings["message"]
 			new_hotkey.refresh_settings()
+		setting_changed.emit(&"hotkeys", hotkey_entries.duplicate_deep())
 
 func _on_visibility_changed() -> void:
 	if !visible: queue_free()
@@ -53,6 +55,18 @@ func create_new_hotkey() -> HotkeyEntry:
 	return new_hotkey
 
 func apply_hotkey_settings(id: int, settings: Dictionary):
-	config.set_value("hotkey", str(id), settings)
+	if settings.get("delete"):
+		config.erase_section_key("hotkey", str(id))
+	else:
+		config.set_value("hotkey", str(id), settings)
 	config.save("user://sbmo.cfg")
 	setting_changed.emit(&"hotkeys", hotkey_entries)
+
+func _on_close_requested() -> void:
+	for hotkey in hotkey_entries:
+		%HotkeyContainer.remove_child(hotkey)
+
+func _on_hook_toggle_check_box_toggled(toggled_on: bool) -> void:
+	setting_changed.emit(&"hook_enabled", toggled_on)
+	config.set_value("hook", "enabled", toggled_on)
+	config.save("user://sbmo.cfg")

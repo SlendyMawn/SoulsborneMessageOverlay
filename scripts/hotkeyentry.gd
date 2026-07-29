@@ -43,3 +43,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		key = event.keycode
 		$KeySelection.button_pressed = false
 		submit_settings()
+
+func _on_delete_button_pressed() -> void:
+	hotkey_settings_changed.emit(id, {"delete": true})
+	queue_free()

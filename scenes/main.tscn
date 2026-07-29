@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bj6rnvuj1qm56" path="res://fonts/adobe-garmond-pro.OTF" id="2_vtmd7"]
 [ext_resource type="AudioStream" uid="uid://ex6y5l7605vd" path="res://audio/sfx_er_bossdefeat.ogg" id="5_tbgi4"]
 [ext_resource type="AudioStream" uid="uid://c3ykdl6ub7pc0" path="res://audio/sfx_er_death.ogg" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://cmtisisfx2h05" path="res://textures/gfx_icon.png" id="7_o6xl0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f7c53"]
 font = ExtResource("2_vtmd7")
@@ -316,6 +317,7 @@ libraries/ = SubResource("AnimationLibrary_tbgi4")
 stream = ExtResource("5_tbgi4")
 
 [node name="StatusIndicator" type="StatusIndicator" parent="." unique_id=1917162229]
+icon = ExtResource("7_o6xl0")
 menu = NodePath("TrayMenu")
 
 [node name="TrayMenu" type="PopupMenu" parent="StatusIndicator" unique_id=192205560]

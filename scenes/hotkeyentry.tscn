@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dsnbwqwajlqfd"]
 
 [ext_resource type="Script" uid="uid://ncpc1a17waqs" path="res://scripts/hotkeyentry.gd" id="1_5o5y1"]
+[ext_resource type="Texture2D" uid="uid://bp2xcuvt4gjoj" path="res://textures/gfx_no.png" id="2_q6fv2"]
 
 [node name="HotkeyEntry" type="HBoxContainer" unique_id=250207182]
 script = ExtResource("1_5o5y1")
@@ -57,9 +58,17 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 placeholder_text = "Message.."
 
+[node name="DeleteButton" type="Button" parent="." unique_id=2097212310]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+icon = ExtResource("2_q6fv2")
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="toggled" from="KeySelection" to="." method="_on_key_selection_toggled"]
 [connection signal="item_selected" from="GameSelection" to="." method="_on_game_selection_item_selected"]
 [connection signal="pressed" from="GameSelection" to="." method="_on_game_selection_pressed"]
 [connection signal="value_changed" from="TypeSelection" to="." method="_on_type_selection_value_changed"]
 [connection signal="text_changed" from="MessageSelection" to="." method="_on_message_selection_text_changed"]
 [connection signal="text_submitted" from="MessageSelection" to="." method="_on_message_selection_text_submitted"]
+[connection signal="pressed" from="DeleteButton" to="." method="_on_delete_button_pressed"]

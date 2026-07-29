@@ -11,6 +11,7 @@ var config_popup: PopupPanel
 var hotkeys: Array[HotkeyEntry]
 
 # Hook
+var hook_enabled: bool = true
 var hook: UDPServer = UDPServer.new()
 var hook_port: int = 22711
 
@@ -20,18 +21,24 @@ func _ready() -> void:
 		MousePassthrough.set_passthrough(get_window().get_window_id(), true)
 	# TODO: Find a way of hiding the app in the taskbar. (Hack with C++?)
 	# Read config (if available)
+	config_popup = config_popup_scn.instantiate()
 	if config.load("user://sbmo.cfg") == OK:
-		if !config.get_value("hook", "enabled", true):
-			hook = null
-		else:
-			hook_port = config.get_value("hook", "port", 22711)
+		hook_enabled = config.get_value("hook", "enabled", true)
+		hook_port = config.get_value("hook", "port", 22711)
 		AudioServer.set_bus_volume_linear(0, config.get_value("audio", "volume", 1.0))
-	if hook:
-		hook.listen(hook_port)
+		config_popup.config = config
+	config_popup.setting_changed.connect(update_setting)
+	add_child(config_popup)
+	config_popup.popup()
 
 func _process(delta: float) -> void:
-	if hook:
+	if hook_enabled:
+		if !hook.is_listening():
+			hook.listen(hook_port)
 		_process_hook()
+	else:
+		if hook.is_listening():
+			hook.stop()
 
 func trigger_message(game: int, type: int, message: String):
 	# Do not play during another message
@@ -83,6 +90,11 @@ func _on_tray_menu_index_pressed(index: int) -> void:
 func update_setting(setting: StringName, value):
 	set(setting, value)
 
-
+# This might be slow, come up with something better?
 func _on_hotkey_daemon_on_key_pressed(value: int) -> void:
-	print(value)
+	if !config_popup:
+		for hotkey in hotkeys:
+			# Sometimes these hotkeys get freed here and are still iterated on?
+			if hotkey:
+				if hotkey.key == value:
+					trigger_message(hotkey.game, hotkey.type, hotkey.message)

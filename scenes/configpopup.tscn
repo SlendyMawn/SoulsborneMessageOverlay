@@ -6,7 +6,7 @@
 oversampling_override = 1.0
 title = "Soulsborne Message Overlay Configuration"
 initial_position = 2
-size = Vector2i(640, 480)
+size = Vector2i(640, 501)
 visible = true
 borderless = false
 script = ExtResource("1_en3dd")
@@ -15,7 +15,7 @@ script = ExtResource("1_en3dd")
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 636.0
-offset_bottom = 476.0
+offset_bottom = 497.0
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
@@ -85,6 +85,19 @@ text = "- Hook -"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HookToggleContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=975377903]
+layout_mode = 2
+
+[node name="HookToggleLabel" type="Label" parent="MarginContainer/VBoxContainer/HookToggleContainer" unique_id=776276297]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Enabled"
+
+[node name="HookToggleCheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/HookToggleContainer" unique_id=1325497665]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+
 [node name="HookPortContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1544751176]
 layout_mode = 2
 
@@ -103,7 +116,9 @@ max_value = 65535.0
 value = 22711.0
 alignment = 2
 
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/AddHotkeyButton" to="." method="_on_add_hotkey_button_pressed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/VolumeContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HookToggleContainer/HookToggleCheckBox" to="." method="_on_hook_toggle_check_box_toggled"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HookPortContainer/HookPortSpinBox" to="." method="_on_hook_port_spin_box_value_changed"]
