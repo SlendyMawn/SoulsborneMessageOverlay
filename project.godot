@@ -41,6 +41,10 @@ window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 window/per_pixel_transparency/allowed=true
 
+[global_group]
+
+hotkey_button=""
+
 [gui]
 
 theme/custom="uid://cromjub0a4gd5"

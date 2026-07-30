@@ -6,7 +6,7 @@
 [node name="HotkeyEntry" type="HBoxContainer" unique_id=250207182]
 script = ExtResource("1_5o5y1")
 
-[node name="KeySelection" type="Button" parent="." unique_id=1129889331]
+[node name="KeySelection" type="Button" parent="." unique_id=1129889331 groups=["hotkey_button"]]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 3

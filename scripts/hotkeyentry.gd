@@ -35,6 +35,11 @@ func submit_settings():
 
 func _on_key_selection_toggled(toggled_on: bool) -> void:
 	$KeySelection.text = "..." if toggled_on else OS.get_keycode_string(key)
+	# This doesn't let the new button set a new hotkey, and you have to click it again. Eh, who cares?
+	for button in get_tree().get_nodes_in_group(&"hotkey_button"):
+		if button != $KeySelection:
+			button.set_process_unhandled_key_input(false)
+			button.button_pressed = false
 	set_process_unhandled_key_input(toggled_on)
 
 func _unhandled_key_input(event: InputEvent) -> void:
