@@ -5,6 +5,8 @@ This program built on [Godot Engine 4.7](https://godotengine.org/) acts as an ov
 
 This can be triggered via hotkey or via UDP packet from any local program. *(Stream Deck Plugin, Game/Tool Addons, etc)*
 
+<img width="853" height="480" alt="blendercrashed_c" src="https://github.com/user-attachments/assets/b25cc61d-255b-4577-bb41-25c6321457d6" />
+
 [Documentation](https://github.com/SlendyMawn/SoulsborneMessageOverlay/wiki)
 
 **Features**
